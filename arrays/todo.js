@@ -1,18 +1,18 @@
 let todos = [{
     text: 'Take out the garbage',
-    completed: false
+    completed: true
 }, {
     text: 'Drink water',   
     completed: false
 }, {
     text: 'Have a meal',
-    completed: false
+    completed: true
 }, {
     text: 'Take a shower',
     completed: false
 }, {
     text: 'Pet my cat',
-    completed: false    
+    completed: true   
 }];
 
 const deleteTodo = function (todo, todoText) {
@@ -24,8 +24,18 @@ const deleteTodo = function (todo, todoText) {
     }
 }
 
-deleteTodo(todos, 'Pet my cat')
-console.log(todos)
+
+const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return !
+        todo.completed
+    })
+}
+
+console.log(getThingsToDo(todos))
+
+// deleteTodo(todos, 'Pet my cat')
+// console.log(todos)
 
 // 1 - Converter o array de strings em array de objetos -> text, completed - FEITO
 // 2 - Criar função pra remover a task pelo valor do texto

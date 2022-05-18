@@ -17,12 +17,15 @@ const findNote = function (notes, noteTitle) {
     })
 }
 
-const filterNotes = notes.filter(function (note, index) {
-    const isTitleMatch = note.title.toLowerCase().includes('ne');
-    const isBodyMatch = note.body.toLowerCase().includes('ne');
-    return isTitleMatch || isBodyMatch;
-})
-console.log(filterNotes);
+const findNotes = function (notes, query) {
+    return notes.filter(function (note, index) {
+        const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase());
+        const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase());
+        return isTitleMatch || isBodyMatch;
+    })
+}
+
+console.log(findNotes(notes, 'work'));
 
 // const findNote = function (notes, noteTitle) {
 //     const index = notes.findIndex((note, index) => {
